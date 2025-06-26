@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function MovieProfile() {
@@ -13,7 +13,7 @@ function MovieProfile() {
     }, [id]);
 
     if(!movie) return <h2>Loading...</h2>
-    
+
 
     return (
         <div>
@@ -22,6 +22,7 @@ function MovieProfile() {
             <p>Year: {movie.year}</p>
             <p>Director: {movie.director}</p>
             <p>Rating: {movie.rating}</p>
+            <Link to="/movies">Back to Movies</Link>
         </div>
     )
 }
