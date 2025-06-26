@@ -2,6 +2,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
+import MovieList from "./pages/MovieList";
+import MovieProfile from "./pages/MovieProfile";
 
 const routes = [
     {
@@ -11,6 +13,8 @@ const routes = [
         children: [
             { path: "", element: <Home /> },
             { path: "about", element: <About /> },
+            { path: "movies", element: <MovieList /> },
+            { path: "movies/:id", element: <MovieProfile /> },
         ],
     },
 ];
