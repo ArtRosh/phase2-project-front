@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
     return (
-        <li>
+        <li className="movie-card">
             <img src={movie.poster} alt={movie.title} />
             <h3>
                 <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
@@ -14,5 +14,5 @@ function MovieCard({ movie }) {
         </li>
     )
 }
-
+ 
 export default MovieCard;

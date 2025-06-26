@@ -14,7 +14,7 @@ function MovieList() {
     return (
         <div>
             <h2>MovieList</h2>
-            <ul>
+            <ul className="movie-list">
                 {movies.map(movie => (
                     <MovieCard key={movie.id} movie={movie} />
                 ))}
