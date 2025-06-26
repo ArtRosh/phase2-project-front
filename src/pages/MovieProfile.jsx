@@ -1,7 +1,10 @@
-
+import { useParams } from "react-router-dom";
 
 function MovieProfile() {
-    return <h2>MovieProfile</h2>
+    
+    const {id} = useParams();
+
+    return <h2>Movie ID: {id}</h2>
 }
 
 export default MovieProfile;
