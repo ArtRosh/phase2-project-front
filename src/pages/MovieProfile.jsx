@@ -12,7 +12,17 @@ function MovieProfile() {
         .then(data => setMovie(data))
     }, [id]);
 
-    return <h2>Movie ID: {id}</h2>
+    if(!movie) return <h2>Loading...</h2>
+
+    return (
+        <div>
+            <img src={movie.poster} alt={movie.title} />
+            <h2>{movie.title}</h2>
+            <p>Year: {movie.year}</p>
+            <p>Director: {movie.director}</p>
+            <p>Rating: {movie.rating}</p>
+        </div>
+    )
 }
 
 export default MovieProfile;
