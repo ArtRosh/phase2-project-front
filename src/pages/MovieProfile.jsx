@@ -13,6 +13,7 @@ function MovieProfile() {
     }, [id]);
 
     if(!movie) return <h2>Loading...</h2>
+    
 
     return (
         <div>
