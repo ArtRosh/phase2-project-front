@@ -4,6 +4,7 @@ import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import MovieList from "./pages/MovieList";
 import MovieProfile from "./pages/MovieProfile";
+import Login from "./pages/Login";
 
 const routes = [
     {
@@ -15,6 +16,7 @@ const routes = [
             { path: "about", element: <About /> },
             { path: "movies", element: <MovieList /> },
             { path: "movies/:id", element: <MovieProfile /> },
+            { path: "login", element: <Login />},
         ],
     },
 ];
