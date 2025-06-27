@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import MovieCard from "../components/MovieCard";
+import "./MovieList.css"
 
 function MovieList() {
     const[movies, setMovies] = useState([]);
@@ -14,7 +15,7 @@ function MovieList() {
     return (
         <div>
             <h2>MovieList</h2>
-            <ul className="movie-list">
+            <ul className="movie-list-container">
                 {movies.map(movie => (
                     <MovieCard key={movie.id} movie={movie} />
                 ))}

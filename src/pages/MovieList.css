@@ -1,0 +1,11 @@
+/* MovieList.css */
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 0;
+  list-style: none;
+}
