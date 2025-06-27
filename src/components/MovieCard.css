@@ -1,0 +1,20 @@
+/* MovieCard.css */
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  background-color: #f8f8f8;
+  max-width: 320px;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.movie-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 12px;
+}
