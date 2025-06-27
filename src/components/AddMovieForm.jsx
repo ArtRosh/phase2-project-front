@@ -11,7 +11,28 @@ function AddMovieForm({ addMovie }) {
   function handleSubmit(e) {
     e.preventDefault();
    
-    alert(`Title: ${title}\nDirector: ${director}\nYear: ${year}\nPoster: ${poster}\nRating: ${rating}`);
+   const newMovie = {
+    title,
+    poster,
+    year,
+    director,
+    rating
+   };
+
+   fetch("http://localhost:6001/movies", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(newMovie)
+   })
+    .then(res => res.json())
+    .then(data => {
+        addMovie(data)
+        setTitle("")
+        setDirector("")
+        setYear("")
+        setPoster("")
+        setRating("")
+    })
   }
 
   return (
