@@ -1,23 +1,14 @@
-import { useState, useEffect } from "react"
+import { useContext } from "react";
+import { MovieContext } from "../context/MovieContext";
 import MovieCard from "../components/MovieCard";
 import "./MovieList.css"
 import AddMovieForm from "../components/AddMovieForm";
 
 function MovieList() {
-    const[movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:6001/movies")
-        .then(res => res.json())
-        .then(data => (
-            setMovies(data)
-        ))
-    }, [])
-
-    const addMovie = (newMovie) => {
-        setMovies([...movies, newMovie])
-    }
-
+   
+    const {movies} = useContext(MovieContext)
+    const {addMovie} = useContext(MovieContext)
+    
     return (
         <div>
             <AddMovieForm addMovie={addMovie}/>
