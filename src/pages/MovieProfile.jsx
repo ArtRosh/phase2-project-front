@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./MovieProfile.css"
 
 function MovieProfile() {
     
@@ -14,14 +15,14 @@ function MovieProfile() {
 
     if(!movie) return <h2>Loading...</h2>
 
-
+    
     return (
-        <div>
-            <img src={movie.poster} alt={movie.title} />
-            <h2>{movie.title}</h2>
-            <p>Year: {movie.year}</p>
-            <p>Director: {movie.director}</p>
-            <p>Rating: {movie.rating}</p>
+        <div className="movie-profile-container">
+            <img className="movie-poster" src={movie.poster} alt={movie.title} />
+            <h2 className="movie-title">{movie.title}</h2>
+            <p className="movie-info">Year: {movie.year}</p>
+            <p className="movie-info">Director: {movie.director}</p>
+            <p className="movie-info">Rating: {movie.rating}</p>
             <Link to="/movies">Back to Movies</Link>
         </div>
     )
