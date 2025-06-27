@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MovieContext } from "../context/MovieContext";
 import "../styles/AddMovieForm.css";
 
-function AddMovieForm({ addMovie }) {
+function AddMovieForm() {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [year, setYear] = useState("");
   const [poster, setPoster] = useState("");
   const [rating, setRating] = useState("");
+
+  const { addMovie } = useContext(MovieContext)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,11 +30,11 @@ function AddMovieForm({ addMovie }) {
     .then(res => res.json())
     .then(data => {
         addMovie(data)
-        setTitle("")
-        setDirector("")
-        setYear("")
-        setPoster("")
-        setRating("")
+            setTitle("")
+            setDirector("")
+            setYear("")
+            setPoster("")
+            setRating("")
     })
   }
 
