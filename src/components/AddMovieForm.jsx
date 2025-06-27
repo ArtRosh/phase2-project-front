@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/AddMovieForm.css";
 
-function AddMovieForm({ onAddMovie }) {
+function AddMovieForm({ addMovie }) {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [year, setYear] = useState("");
