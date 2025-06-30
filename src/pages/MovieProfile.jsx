@@ -1,17 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import "./MovieProfile.css"
+import { MovieContext } from "../context/MovieContext";
 
 function MovieProfile() {
     
     const {id} = useParams();
-    const [movie, setMovie] = useState(null);
+    const { movies } = useContext(MovieContext)
 
-    useEffect(() => {
-        fetch(`http://localhost:6001/movies/${id}`)
-        .then(res => res.json())
-        .then(data => setMovie(data))
-    }, [id]);
+   const movie = movies.find(m => m.id === id)
 
     if(!movie) return <h2>Loading...</h2>
 
